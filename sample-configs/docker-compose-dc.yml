@@ -1,0 +1,38 @@
+#
+# copy this file to your source root and execute: 'docker-compose -d -up bitbucket'
+# inside your terminal.
+#
+# our bitbucket core service container using a "shadow copy" of path defined in VOLUMES
+# section from another "data-only" container. this metod provide an additional protection
+# for container running in production systems, prevent data-loss if deleted main core
+# container accidentally.
+#
+bitbucket:
+  restart: 'always'
+  # image: df/atls-bitbucket:7.0.5
+  build: .
+  container_name: df-atls-bitbucket
+
+  ports:
+    - "7990:7990"
+
+  volumes_from:
+    - bitbucket_data:rw
+
+  privileged: false
+  stdin_open: true
+  tty: true
+
+#
+# our confluence data-only container
+#
+bitbucket_data:
+  restart: 'no'
+  # image: df/atls-bitbucket:7.0.5
+  build: .
+
+  privileged: false
+  stdin_open: false
+  tty: false
+
+  entrypoint: /bin/echo "data-only container for bitbucket"
