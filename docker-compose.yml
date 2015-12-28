@@ -1,0 +1,15 @@
+#
+# our bitbucket service container
+#
+bitbucket:
+  restart: 'always'
+  # image: df/atls-bitbucket:4.1.0
+  build: .
+  container_name: df-atls-bitbucket
+
+  ports:
+    - "7990:7990"
+
+  privileged: false
+  stdin_open: true
+  tty: true
