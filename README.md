@@ -25,16 +25,16 @@ As long as our image isn't available via docker.io hub repository, you will need
 git clone https://github.com/dunkelfrosch/docker-bitbucket.git .
 ```
 
-2. build Bitbucket (version 4.1.0) image on your local docker host, naming image "df/bitbucket:4.1.0"
+2. build Bitbucket (version 4.1.0) image on your local docker host, naming image "dunkelfrosch/bitbucket:4.1.0"
 
 ```bash
-docker build -t df/bitbucket:4.1.0
+docker build -t dunkelfrosch/bitbucket:4.1.0
 ```
 
 3. start your new Bitbucket application container
 
 ```bash
-docker run -d -p 7990:7990 df/bitbucket 
+docker run -d -p 7990:7990 dunkelfrosch/bitbucket 
 ```
 	
 4. finish your installation using atlassian's browser based configuration 
@@ -64,7 +64,7 @@ docker-compose up -d bitbucket
 4. (*optional*) rename the resulting image after successful build (we'll use our image auto-name result here)
 
 ```bash
-docker tag dfdockerbitbucket_bitbucket df/bitbucket:4.1.0
+docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:4.1.0
 ```
 
 5. the result should by a running container and an available local bitbucket image

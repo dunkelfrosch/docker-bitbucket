@@ -13,8 +13,8 @@ before_install:
 
 script:
   # check normal docker build
-  - docker build -t df/bitbucket:4.1.0 .
-  - docker run --name df_bitbucket -d -p 127.0.0.1:7990:7990 df/bitbucket:4.1.0
+  - docker build -t dunkelfrosch/bitbucket:4.1.0 .
+  - docker run --name df_bitbucket -d -p 127.0.0.1:7990:7990 dunkelfrosch/bitbucket:4.1.0
   - docker ps | grep "df_bitbucket"
   - docker logs df_bitbucket
   - docker ps -aq | xargs docker rm -f

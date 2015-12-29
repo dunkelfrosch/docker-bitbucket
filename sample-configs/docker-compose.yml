@@ -6,7 +6,7 @@
 #
 bitbucket:
   restart: 'always'
-  # image: df/atls-bitbucket:4.1.0
+  # image: dunkelfrosch/bitbucket:4.1.0
   build: .
   container_name: df-atls-bitbucket
 

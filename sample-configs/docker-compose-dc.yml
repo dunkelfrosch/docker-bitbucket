@@ -9,7 +9,7 @@
 #
 bitbucket:
   restart: 'always'
-  # image: df/atls-bitbucket:7.0.5
+  # image: dunkelfrosch/bitbucket:7.0.5
   build: .
   container_name: df-atls-bitbucket
 
@@ -28,7 +28,7 @@ bitbucket:
 #
 bitbucket_data:
   restart: 'no'
-  # image: df/atls-bitbucket:7.0.5
+  # image: dunkelfrosch/bitbucket:7.0.5
   build: .
 
   privileged: false
