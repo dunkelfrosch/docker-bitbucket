@@ -37,9 +37,37 @@ docker build -t dunkelfrosch/bitbucket:4.2.0
 docker run -d -p 7990:7990 -p 7999:7999 dunkelfrosch/bitbucket 
 ```
 	
-4. finish your installation using atlassian's browser based configuration 
-just navigate to `http://[dockerhost]:7990` 
+4. finish your installation using atlassian's browser based configuration
+just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerhost will depend on your host system. If you're using docker on your mac, you'll properly using docker-machine or the deprecated native boot2docker vbox image. In this case your 'dockerhost' ip will be the vbox ones (just enter `docker-machine ls` and grab your named machine's ip from there. In my case (screenshot down below) the resulting setup-ip will be <strong>192.168.99.100:7990</string> (port will be the tomcat application used port 7990)
 
+![](https://dl.dropbox.com/s/1ajsn7c7az6xn3k/dm_start_002.png)
+
+4.1 The following steps will help you to finalize your bitbucket server web-based configuration
+
+4.1.1 Select "external" database from configuration options and choose MySQL as type
+
+![](https://dl.dropbox.com/s/qrp94qfwtsqh4if/bitbucket_setup_001.png)
+
+4.1.2 Enter the following credentials for your database (take note, that the mysql host will be available as your in docker-compose defined service key 'bitbucket_mysql' or by container-name 'df-atls-bitbucket-mysql' directly):
+
+![](https://dl.dropbox.com/s/wxc3sc6pnvlg2pd/bitbucket_setup_003.png)
+
+| MySQL Host               | username                   | password            | database            |
+|:------------------------ |:-------------------------- |:------------------- |:------------------- |
+| df-atls-bitbucket-mysql  | root                       | please-change-me    | bitbucket           |
+| (or) bitbucket_mysql     |                            |                     |                     |
+
+4.1.3 Enter your license key
+
+![](https://dl.dropbox.com/s/fe5sqpnshha81ck/bitbucket_setup_004.png)
+
+4.1.4 Create your bitbucket administrator user account and proceed to login (do not connect with JIRA!)
+
+![](https://dl.dropbox.com/s/ta1eyhqyj9ic6nn/bitbucket_setup_005.png)
+
+4.1.5 Welcome to your bitbucket server (now you can step through the tutorial or step through mor detailed configuration)
+
+![](https://dl.dropbox.com/s/fphuadsmh2y2s5n/bitbucket_setup_007.png)
 
 ## Installation-Method 2, docker-compose (the recommended approach)
 The following steps will show you an alternative way of your Bitbucket service container installation using Docker Compose
