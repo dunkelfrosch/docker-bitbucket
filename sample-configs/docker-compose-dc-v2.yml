@@ -1,7 +1,7 @@
 #
 # this version of docker-compose can only be used up to version 1.6.n of docker-compose (docker 1.10.n+)
 #
-# copy this file to your source root and execute: 'docker-compose -d -up bitbucket'
+# copy this file to your source root and execute: 'docker-compose up -d bitbucket'
 # inside your terminal.
 #
 # our bitbucket core service container using a "shadow copy" of path defined in VOLUMES
