@@ -54,7 +54,7 @@ just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerh
 
 | MySQL Host               | username                   | password            | database            |
 |:------------------------ |:-------------------------- |:------------------- |:------------------- |
-| df-atls-bitbucket-mysql  | root                       | please-change-me    | bitbucket           |
+| df-atls-bitbucket-mysql  | root                       | secretpassword      | bitbucket           |
 | (or) bitbucket_mysql     |                            |                     |                     |
 
 4.1.3 Enter your license key
