@@ -13,6 +13,7 @@ _current_
 
 ### Added
 - new sample files for docker compose format v2 (1.6.n)
+- new mysql config to provide utf8 compatibility for bitbucket
 
 ### Changes
 - upgrade bitbucket server to version 4.2.0
