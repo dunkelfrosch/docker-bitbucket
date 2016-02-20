@@ -2,11 +2,14 @@
 
 All notable changes of the DockerBitbucket release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-_This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-26-12)_
+_This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-12-26)_
 
 
-## [0.9.9], 2015-29-12:
+## [0.9.9], 2015-02-20:
 _current_
+
+### Fixed
+- fix date format issues in changelog
 
 ### Added
 - new sample files for docker compose format v2 (1.6.n)
@@ -19,14 +22,14 @@ _current_
 - internal documentation issues
 - wrong version set in docker-compose files
 
-## [0.9.8], 2015-29-12:
+## [0.9.8], 2015-12-29:
 
 ### Changes
 - fix namespace issues (prepare docker hub integration)
 - minor documentation issues
 
 
-## [0.9.7], 2015-28-12:
+## [0.9.7], 2015-12-28:
 
 ### Changes
 - extend main documentation
@@ -36,7 +39,7 @@ _current_
 - new docker-compose sample yaml files
 - travis build test
 
-## [0.9.6], 2015-26-12:
+## [0.9.6], 2015-12-26:
 
 ### Added
 - initial commit

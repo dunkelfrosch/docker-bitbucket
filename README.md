@@ -99,6 +99,7 @@ docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:4.2.0
 
 ![](https://dl.dropbox.com/s/iwbxdix94tw1wmj/dc_result_001.png)
 
+
 ## Installation-Method 3, Docker Compose using DB (advanced)
 Bitbucket needs a relational DB and for safety reasons we suggest using data-only container features. Take a look inside your *./sample-config* path, we've provided a few sample Docker Compose yaml config files below to show you those feature implementations.
 
@@ -111,7 +112,8 @@ Bitbucket needs a relational DB and for safety reasons we suggest using data-onl
 ./sample-configs/**docker-compose-v2.yml**
 > sample configuration for the new docker-compose format (valid since version 1.6.n of docker-compose)
 
-I've extend the sample configuration files with corresponding parts of new docker-compose v2 formatted ones (this files will be suffixed by -v2)
+I've extend the sample configuration files with corresponding parts of new docker-compose v2 formatted ones (this files will be suffixed by 'v2')
+
 
 ## container access and maintenance
 You can check container health by accessing logs of inner tomcat/bitbucket processes directly as long as the container is still running. As you can see in this screenshot, Atlassian Bitbucket was starting successfully (*Let's ignore some minor warnings ;)* )
