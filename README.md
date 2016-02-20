@@ -5,7 +5,7 @@
 this repository provide the currently latest version of Atlassians sourcecode repository/review software [Bitbucket](https://de.atlassian.com/software/bitbucket) including the recommended [MySQL java connector](http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz) for an easy and painless docker based Bitbucket installation. Take note that this repository will be used inside our docker atlassian application workbench sources, which are also available on [Github](https://github.com/dunkelfrosch/docker-atlassian-wb) as soon as documentation is completed. *In this workbench we've combined several Atlassian products (JIRA, Confluence and Bitbucket) using advanced docker features like docker-compose based service management, data-container and links*
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![System Version](https://img.shields.io/badge/version-0.9.7-blue.svg)](VERSION)
+[![System Version](https://img.shields.io/badge/version-0.9.9-blue.svg)](VERSION)
 [![Build Status](https://travis-ci.org/dunkelfrosch/docker-bitbucket.svg?branch=master)](STATUS)
 
 ## Preparation
@@ -65,9 +65,10 @@ just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerh
 
 ![](https://dl.dropbox.com/s/ta1eyhqyj9ic6nn/bitbucket_setup_005.png)
 
-4.1.5 Welcome to your bitbucket server (now you can step through the tutorial or step through mor detailed configuration)
+4.1.5 Welcome to your bitbucket server :)
 
 ![](https://dl.dropbox.com/s/fphuadsmh2y2s5n/bitbucket_setup_007.png)
+
 
 ## Installation-Method 2, docker-compose (the recommended approach)
 The following steps will show you an alternative way of your Bitbucket service container installation using Docker Compose
@@ -109,6 +110,8 @@ Bitbucket needs a relational DB and for safety reasons we suggest using data-onl
 
 ./sample-configs/**docker-compose-v2.yml**
 > sample configuration for the new docker-compose format (valid since version 1.6.n of docker-compose)
+
+I've extend the sample configuration files with corresponding parts of new docker-compose v2 formatted ones (this files will be suffixed by -v2)
 
 ## container access and maintenance
 You can check container health by accessing logs of inner tomcat/bitbucket processes directly as long as the container is still running. As you can see in this screenshot, Atlassian Bitbucket was starting successfully (*Let's ignore some minor warnings ;)* )
