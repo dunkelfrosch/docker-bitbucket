@@ -50,3 +50,6 @@ services:
     privileged: false
     stdin_open: true
     tty: true
+
+    volumes:
+      - ./etc/mysql/conf.d:/etc/mysql/conf.d
