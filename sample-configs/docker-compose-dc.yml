@@ -9,12 +9,13 @@
 #
 bitbucket:
   restart: 'always'
-  # image: dunkelfrosch/bitbucket:7.0.5
+  # image: dunkelfrosch/bitbucket:4.2.0
   build: .
   container_name: df-atls-bitbucket
 
   ports:
     - "7990:7990"
+    - "7999:7999"
 
   volumes_from:
     - bitbucket_data:rw
@@ -24,11 +25,11 @@ bitbucket:
   tty: true
 
 #
-# our confluence data-only container
+# our bitbucket data-only container
 #
 bitbucket_data:
   restart: 'no'
-  # image: dunkelfrosch/bitbucket:7.0.5
+  # image: dunkelfrosch/bitbucket:4.2.0
   build: .
 
   privileged: false

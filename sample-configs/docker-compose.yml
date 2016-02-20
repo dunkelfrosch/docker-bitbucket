@@ -6,12 +6,13 @@
 #
 bitbucket:
   restart: 'always'
-  # image: dunkelfrosch/bitbucket:4.1.0
+  # image: dunkelfrosch/bitbucket:4.2.0
   build: .
   container_name: df-atls-bitbucket
 
   ports:
     - "7990:7990"
+    - "7999:7999"
 
   privileged: false
   stdin_open: true
