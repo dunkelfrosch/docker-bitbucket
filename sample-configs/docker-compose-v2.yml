@@ -1,0 +1,25 @@
+#
+# this version of docker-compose can only be used up to version 1.6.n of docker-compose (docker 1.10.n+)
+#
+# copy this file to your source root and execute: 'docker-compose -d -up bitbucket'
+# inside your terminal.
+#
+# our bitbucket service container
+#
+version: '2'
+services:
+  bitbucket:
+    restart: 'always'
+    # image: dunkelfrosch/bitbucket:4.2.0
+    build:
+      context: .
+
+    container_name: df-atls-bitbucket
+
+    ports:
+      - "7990:7990"
+      - "7999:7999"
+
+    privileged: false
+    stdin_open: true
+    tty: true

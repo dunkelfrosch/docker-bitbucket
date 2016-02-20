@@ -1,0 +1,49 @@
+#
+# this version of docker-compose can only be used up to version 1.6.n of docker-compose (docker 1.10.n+)
+#
+# copy this file to your source root and execute: 'docker-compose -d -up bitbucket'
+# inside your terminal.
+#
+# our bitbucket core service container using a "shadow copy" of path defined in VOLUMES
+# section from another "data-only" container. this metod provide an additional protection
+# for container running in production systems, prevent data-loss if deleted main core
+# container accidentally.
+#
+version: '2'
+services:
+  bitbucket:
+    restart: 'always'
+    # image: dunkelfrosch/bitbucket:4.2.0
+    build:
+      context: .
+
+    container_name: df-atls-bitbucket
+
+    ports:
+      - "7990:7990"
+      - "7999:7999"
+
+    volumes_from:
+      - bitbucket_data:rw
+
+    privileged: false
+    stdin_open: true
+    tty: true
+
+    depends_on:
+      - bitbucket_data
+
+  #
+  # our bitbucket data-only container
+  #
+  bitbucket_data:
+    restart: 'no'
+    # image: dunkelfrosch/bitbucket:4.2.0
+    build:
+      context: .
+
+    privileged: false
+    stdin_open: false
+    tty: false
+
+    entrypoint: /bin/echo "data-only container for bitbucket"

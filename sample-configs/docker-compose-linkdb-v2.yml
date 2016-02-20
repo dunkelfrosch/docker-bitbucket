@@ -1,0 +1,52 @@
+#
+# this version of docker-compose can only be used up to version 1.6.n of docker-compose (docker 1.10.n+)
+#
+# copy this file to your source root and execute: 'docker-compose -d -up bitbucket'
+# inside your terminal.
+#
+# our bitbucket service container, using mysql 5.6 as linked in service container.
+# you can access the linked db during bitbucket setup using host "bitbucket.mysql"
+# with user "root", password="secretpassword" and db="bitbucket" now.
+#
+# bitbucket need's special encoding of your database, unfortunately the entrypoint
+# script of official mysql image doesn't support encoding als environment based param.
+# you've create your own Dockerfile, extending the officially one and change your mysql
+# configuration file by yourself. check your atlassian workbench to see how we've done
+# that.
+#
+version: '2'
+services:
+
+  bitbucket:
+    restart: 'always'
+    # image: dunkelfrosch/bitbucket:4.2.0
+    build:
+      context: .
+
+    container_name: df-atls-bitbucket
+
+    ports:
+      - "7990:7990"
+      - "7999:7999"
+
+    privileged: false
+    stdin_open: true
+    tty: true
+
+    depends_on:
+      - bitbucket_mysql
+
+    links:
+      - bitbucket_mysql
+
+  bitbucket_mysql:
+    restart: 'always'
+    image: mysql:5.6
+
+    environment:
+      MYSQL_DATABASE: 'bitbucket'
+      MYSQL_ROOT_PASSWORD: 'secretpassword'
+
+    privileged: false
+    stdin_open: true
+    tty: true
