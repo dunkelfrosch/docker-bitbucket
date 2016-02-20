@@ -16,8 +16,8 @@ We recommend the [latest Docker version](https://github.com/docker/docker/blob/m
 [docker machine installation guide](https://docs.docker.com/machine/install-machine/)</br>
 
 
-## Installation-Method 1, docker (the classic approach)
-As long as our image isn't available via docker.io hub repository, you will need to build it by yourself using this Github repository. These steps will show you the generic, pure Docker based installation of our Bitbucket image container, without any database container linked or data-container feature.  *We also will provide a Docker Compose based installation in this documentation (Method 2)*.
+## Installation-Method 1, using docker
+These steps will show you the generic, pure docker-based installation of our bitbucket image container (the classic approach).  *We also will provide a Docker Compose based installation in this documentation (Method 2)*.
 
 1. checkout this repository
 
@@ -70,8 +70,8 @@ just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerh
 ![](https://dl.dropbox.com/s/fphuadsmh2y2s5n/bitbucket_setup_007.png)
 
 
-## Installation-Method 2, docker-compose (the recommended approach)
-The following steps will show you an alternative way of your Bitbucket service container installation using Docker Compose
+## Installation-Method 2, docker-compose
+The following steps will show you an alternative way of your Bitbucket service container installation using Docker Compose (the recommended approach).
 
 1. checkout this repository
 
