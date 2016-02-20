@@ -1,4 +1,4 @@
-# Docker Image for Atlassian Bitbucket Server 4.1.0
+# Docker Image for Atlassian Bitbucket Server 4.2.0
 
 *this documentation isn't fully done yet - we're still working on major and minor issues corresponding to this repository base!*
 
@@ -16,7 +16,7 @@ We recommend the [latest Docker version](https://github.com/docker/docker/blob/m
 [docker machine installation guide](https://docs.docker.com/machine/install-machine/)</br>
 
 
-## Installation-Method 1, the classic Docker way
+## Installation-Method 1, docker (the classic approach)
 As long as our image isn't available via docker.io hub repository, you will need to build it by yourself using this Github repository. These steps will show you the generic, pure Docker based installation of our Bitbucket image container, without any database container linked or data-container feature.  *We also will provide a Docker Compose based installation in this documentation (Method 2)*.
 
 1. checkout this repository
@@ -25,25 +25,24 @@ As long as our image isn't available via docker.io hub repository, you will need
 git clone https://github.com/dunkelfrosch/docker-bitbucket.git .
 ```
 
-2. build Bitbucket (version 4.1.0) image on your local docker host, naming image "dunkelfrosch/bitbucket:4.1.0"
+2. build Bitbucket (version 4.2.0) image on your local docker host, naming image "dunkelfrosch/bitbucket:4.1.0"
 
 ```bash
-docker build -t dunkelfrosch/bitbucket:4.1.0
+docker build -t dunkelfrosch/bitbucket:4.2.0
 ```
 
-3. start your new Bitbucket application container
+3. start your new Bitbucket application container (opening application port 7990 and internal-ssh port 7999)
 
 ```bash
-docker run -d -p 7990:7990 dunkelfrosch/bitbucket 
+docker run -d -p 7990:7990 -p 7999:7999 dunkelfrosch/bitbucket 
 ```
 	
 4. finish your installation using atlassian's browser based configuration 
 just navigate to `http://[dockerhost]:7990` 
 
 
-## Installation-Method 2, docker-compose (simple)
+## Installation-Method 2, docker-compose (the recommended approach)
 The following steps will show you an alternative way of your Bitbucket service container installation using Docker Compose
-
 
 1. checkout this repository
 
@@ -64,7 +63,7 @@ docker-compose up -d bitbucket
 4. (*optional*) rename the resulting image after successful build (we'll use our image auto-name result here)
 
 ```bash
-docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:4.1.0
+docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:4.2.0
 ```
 
 5. the result should by a running container and an available local bitbucket image
@@ -79,6 +78,9 @@ Bitbucket needs a relational DB and for safety reasons we suggest using data-onl
 
 ./sample-configs/**docker-compose-linkdb.yml**
 > sample configuration for linking mysql container directly
+
+./sample-configs/**docker-compose-v2.yml**
+> sample configuration for the new docker-compose format (valid since version 1.6.n of docker-compose)
 
 ## container access and maintenance
 You can check container health by accessing logs of inner tomcat/bitbucket processes directly as long as the container is still running. As you can see in this screenshot, Atlassian Bitbucket was starting successfully (*Let's ignore some minor warnings ;)* )
@@ -105,7 +107,7 @@ This project is still under development and contributors are always welcome! Ple
 
 ## License-Term
 
-Copyright (c) 2015 Patrick Paechnatz <patrick.paechnatz@gmail.com>
+Copyright (c) 2015-2016 Patrick Paechnatz <patrick.paechnatz@gmail.com>
                                                                            
 Permission is hereby granted,  free of charge,  to any  person obtaining a 
 copy of this software and associated documentation files (the "Software"),
