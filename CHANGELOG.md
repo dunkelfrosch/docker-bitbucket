@@ -10,6 +10,7 @@ _current_
 
 ### Fixed
 - fix date format issues in changelog
+- fix documentation issue in docker-compose sample files
 
 ### Added
 - new sample files for docker compose format v2 (1.6.n)
