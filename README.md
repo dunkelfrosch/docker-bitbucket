@@ -1,23 +1,22 @@
 # Docker Image for Atlassian Bitbucket Server 4.2.0
 
-*this documentation isn't fully done yet - we're still working on major and minor issues corresponding to this repository base!*
-
 this repository provide the currently latest version of Atlassians sourcecode repository/review software [Bitbucket](https://de.atlassian.com/software/bitbucket) including the recommended [MySQL java connector](http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz) for an easy and painless docker based Bitbucket installation. Take note that this repository will be used inside our docker atlassian application workbench sources, which are also available on [Github](https://github.com/dunkelfrosch/docker-atlassian-wb) as soon as documentation is completed. *In this workbench we've combined several Atlassian products (JIRA, Confluence and Bitbucket) using advanced docker features like docker-compose based service management, data-container and links*
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![System Version](https://img.shields.io/badge/version-0.9.9-blue.svg)](VERSION)
 [![Build Status](https://travis-ci.org/dunkelfrosch/docker-bitbucket.svg?branch=master)](STATUS)
 
+
 ## Preparation
 We recommend the [latest Docker version](https://github.com/docker/docker/blob/master/CHANGELOG.md). For simple system integration and supervision we suggest [Docker Compose](https://docs.docker.com/compose/install/). If you're using MacOS or Windows as host operating system, you may take the advantage of [Docker Machine](https://www.docker.com/docker-machine) for Docker's VM management. Bitbucket requires a relational database like MySQL or PostgreSQL, so we'll provide a specific Docker Compose configuration file to showcase both a Bitbucket-MySQL link and a data-container feature configuration. Use the installation guides of provided links down below to comply your Docker preparation process.
 
 [docker installation guide](https://docs.docker.com/engine/installation/)</br>
 [docker-compose installation guide](https://docs.docker.com/compose/install/)</br>
-[docker machine installation guide](https://docs.docker.com/machine/install-machine/)</br>
+[docker-machine installation guide](https://docs.docker.com/machine/install-machine/)</br>
 
 
 ## Installation-Method 1, using docker
-These steps will show you the generic, pure docker-based installation of our bitbucket image container (the classic approach).  *We also will provide a Docker Compose based installation in this documentation (Method 2)*.
+These steps will show you the generic, pure docker-based installation of our Atlassian-Bitbucket image/container (the classic approach).  *We also will provide (and recommend) a docker-compose based installation in this documentation (↗ Installation-Method 2)*.
 
 1. checkout this repository
 
@@ -38,9 +37,9 @@ docker run -d -p 7990:7990 -p 7999:7999 dunkelfrosch/bitbucket
 ```
 	
 4. finish your installation using atlassian's browser based configuration
-just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerhost will depend on your host system. If you're using docker on your mac, you'll properly using docker-machine or the deprecated native boot2docker vbox image. In this case your 'dockerhost' ip will be the vbox ones (just enter `docker-machine ls` and grab your named machine's ip from there. In my case (screenshot down below) the resulting setup-ip will be <strong>192.168.99.100:7990</string> (port will be the tomcat application used port 7990)
+just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerhost will depend on your host system. If you're using docker on your mac, you'll properly using docker-machine or the deprecated native boot2docker vbox image. In this case your 'dockerhost' ip will be the vbox ones (just enter `docker-machine ls` and grab your named machine's ip from there. In my case, (image down below) the resulting setup-ip will be <strong>192.168.99.100:7990</strong> on any other "real" linux system the setup-ip should be 127.0.0.1/localhost (port will be the tomcat application used port 7990)
 
-![](https://dl.dropbox.com/s/1ajsn7c7az6xn3k/dm_start_002.png)
+![](https://dl.dropbox.com/s/jnmr3ejkzm12hdc/dm_start_003.png)
 
 4.1 The following steps will help you to finalize your bitbucket server web-based configuration
 
@@ -49,6 +48,7 @@ just navigate to `http://[dockerhost]:7990`. Please take note, that your dockerh
 ![](https://dl.dropbox.com/s/qrp94qfwtsqh4if/bitbucket_setup_001.png)
 
 4.1.2 Enter the following credentials for your database (take note, that the mysql host will be available as your in docker-compose defined service key 'bitbucket_mysql' or by container-name 'df-atls-bitbucket-mysql' directly):
+_the initialization and base import of the db will take a while (may be up to 3 minutes)_
 
 ![](https://dl.dropbox.com/s/wxc3sc6pnvlg2pd/bitbucket_setup_003.png)
 
