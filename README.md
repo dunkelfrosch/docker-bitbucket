@@ -1,4 +1,4 @@
-# Docker Image for Atlassian Bitbucket Server 4.2.0
+# Docker Image for Atlassian Bitbucket Server 4.2.3
 
 this repository provide the currently latest version of Atlassians sourcecode repository/review software [Bitbucket](https://de.atlassian.com/software/bitbucket) including the recommended [MySQL java connector](http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz) for an easy and painless docker based Bitbucket installation. Take note that this repository will be used inside our docker atlassian application workbench sources, which are also available on [Github](https://github.com/dunkelfrosch/docker-atlassian-wb) as soon as documentation is completed. *In this workbench we've combined several Atlassian products (JIRA, Confluence and Bitbucket) using advanced docker features like docker-compose based service management, data-container and links*
 
@@ -24,7 +24,7 @@ These steps will show you the generic, pure docker-based installation of our Atl
 git clone https://github.com/dunkelfrosch/docker-bitbucket.git .
 ```
 
-2. build Bitbucket (version 4.2.0) image on your local docker host, naming image "dunkelfrosch/bitbucket:4.1.0"
+2. build Bitbucket (version 4.2.3) image on your local docker host, naming image "dunkelfrosch/bitbucket:4.1.0"
 
 ```bash
 docker build -t dunkelfrosch/bitbucket:4.2.0
