@@ -23,7 +23,7 @@ ENV DEBIAN_FRONTEND         noninteractive
 ENV TIMEZONE                "Europe/Berlin"
 # Setup application install environment variables
 
-ENV BITBUCKET_VERSION       4.2.0
+ENV BITBUCKET_VERSION       4.2.3
 ENV BITBUCKET_HOME          "/var/atlassian/application-data/bitbucket"
 ENV BITBUCKET_INSTALL_DIR   "/opt/atlassian/bitbucket"
 ENV DOWNLOAD_URL            "https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-"

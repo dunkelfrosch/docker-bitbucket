@@ -17,7 +17,7 @@ _current_
 - new mysql config to provide utf8 compatibility for bitbucket
 
 ### Changes
-- upgrade bitbucket server to version 4.2.0
+- upgrade bitbucket server to latest version 4.2 (4.2.3)
 - minor issues in docker-compose file definition
 
 ### Fixed
