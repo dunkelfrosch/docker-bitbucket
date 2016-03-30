@@ -11,25 +11,26 @@ _current_
 ### Fixed
 - fix date format issues in changelog
 - fix documentation issue in docker-compose sample files
+- fix minor changelog issue
 
 ### Added
 - new sample files for docker compose format v2 (1.6.n)
 - new mysql config to provide utf8 compatibility for bitbucket
+- travis ci command, remove latest image build
 
 ### Changes
 - upgrade bitbucket server to latest version 4.2 (4.2.3)
 - minor issues in docker-compose file definition
 
-### Fixed
-- internal documentation issues
-- wrong version set in docker-compose files
-
 ## [0.9.8], 2015-12-29:
 
-### Changes
+### Fixed
+- fix internal documentation issues
+- fix wrong version set in docker-compose files
 - fix namespace issues (prepare docker hub integration)
-- minor documentation issues
 
+### Changes
+- minor documentation issues
 
 ## [0.9.7], 2015-12-28:
 
