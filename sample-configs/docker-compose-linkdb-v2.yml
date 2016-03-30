@@ -45,7 +45,7 @@ services:
 
     environment:
       MYSQL_DATABASE: 'bitbucket'
-      MYSQL_ROOT_PASSWORD: 'secretpassword'
+      MYSQL_ROOT_PASSWORD: 'please-change-me'
 
     privileged: false
     stdin_open: true
