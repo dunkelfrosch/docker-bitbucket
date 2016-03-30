@@ -4,7 +4,6 @@ All notable changes of the DockerBitbucket release series are documented in this
 
 _This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-12-26)_
 
-
 ## [0.9.9], 2015-02-20:
 _current_
 
@@ -22,6 +21,7 @@ _current_
 - upgrade bitbucket server to latest version 4.2 (4.2.3)
 - minor issues in docker-compose file definition
 
+
 ## [0.9.8], 2015-12-29:
 
 ### Fixed
@@ -32,6 +32,7 @@ _current_
 ### Changes
 - minor documentation issues
 
+
 ## [0.9.7], 2015-12-28:
 
 ### Changes
@@ -41,6 +42,7 @@ _current_
 ### Added
 - new docker-compose sample yaml files
 - travis build test
+
 
 ## [0.9.6], 2015-12-26:
 
