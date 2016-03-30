@@ -54,7 +54,7 @@ _the initialization and base import of the db will take a while (may be up to 3 
 
 | MySQL Host               | username                   | password            | database            |
 |:------------------------ |:-------------------------- |:------------------- |:------------------- |
-| df-atls-bitbucket-mysql  | root                       | secretpassword      | bitbucket           |
+| df-atls-bitbucket-mysql  | root                       | please-change-me    | bitbucket           |
 | (or) bitbucket_mysql     |                            |                     |                     |
 
 4.1.3 Enter your license key
