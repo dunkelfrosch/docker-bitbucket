@@ -3,7 +3,7 @@
 #
 bitbucket:
   restart: 'no'
-  # image: dunkelfrosch/bitbucket:4.2.0
+  # image: dunkelfrosch/bitbucket:4.7.2
   build: .
   container_name: df-atls-bitbucket
 

@@ -3,7 +3,7 @@
 # OS/CORE  : java:8
 # SERVICES : -
 #
-# VERSION 0.9.9
+# VERSION 1.0.0
 #
 
 FROM java:8
@@ -13,7 +13,7 @@ LABEL com.container.vendor="dunkelfrosch impersonate" \
       com.container.service="atlassian/bitbucket" \
       com.container.priority="1" \
       com.container.project="bitbucket" \
-      img.version="0.9.9" \
+      img.version="1.0.0" \
       img.description="atlassian bitbucket application container"
 
 # Setup base environment variables
@@ -23,7 +23,7 @@ ENV DEBIAN_FRONTEND         noninteractive
 ENV TIMEZONE                "Europe/Berlin"
 # Setup application install environment variables
 
-ENV BITBUCKET_VERSION       4.2.3
+ENV BITBUCKET_VERSION       4.7.1
 ENV BITBUCKET_HOME          "/var/atlassian/application-data/bitbucket"
 ENV BITBUCKET_INSTALL_DIR   "/opt/atlassian/bitbucket"
 ENV DOWNLOAD_URL            "https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-"

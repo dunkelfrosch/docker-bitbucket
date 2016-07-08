@@ -1,11 +1,17 @@
-# ChangeLog of DockerBitbucket 0.9.9
+# ChangeLog of DockerBitbucket 1.0.0
 
 All notable changes of the DockerBitbucket release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
 _This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-12-26)_
 
-## [0.9.9], 2015-02-20:
+## [1.0.0], 2015-02-20:
 _current_
+
+### Changes
+- upgrade bitbucket server to latest version 4.7 (4.7.1)
+
+
+## [0.9.9], 2015-02-20:
 
 ### Fixed
 - fix date format issues in changelog
