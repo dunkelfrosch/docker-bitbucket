@@ -4,7 +4,7 @@ All notable changes of the DockerBitbucket release series are documented in this
 
 _This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-12-26)_
 
-## [1.0.0], 2015-02-20:
+## [1.0.0], 2015-07-08:
 _current_
 
 ### Changes
