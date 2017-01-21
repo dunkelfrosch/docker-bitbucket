@@ -67,7 +67,7 @@ RUN set -e \
 # home directory needs to be persisted as well as parts of the installation
 # directory (accessing logs). These directories will be set-and-used during
 # data-only container volume bound run-mode.
-VOLUME ["${BITBUCKET_INSTALL_DIR}", "${BITBUCKET_HOME}"]
+# VOLUME ["${BITBUCKET_INSTALL_DIR}", "${BITBUCKET_HOME}"]
 
 # Set application base communication port(s), bitbucket HTTP and bitbucket SSH
 EXPOSE 7990 7999
