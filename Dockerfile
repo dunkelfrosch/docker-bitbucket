@@ -11,6 +11,7 @@ FROM java:8
 MAINTAINER Patrick Paechnatz <patrick.paechnatz@gmail.com>
 LABEL com.container.vendor="dunkelfrosch impersonate" \
       com.container.service="atlassian/bitbucket" \
+      com.container.service.version="4.13.0" \
       com.container.priority="1" \
       com.container.project="bitbucket" \
       img.version="1.0.0" \
@@ -23,7 +24,7 @@ ENV DEBIAN_FRONTEND         noninteractive
 ENV TIMEZONE                "Europe/Berlin"
 # Setup application install environment variables
 
-ENV BITBUCKET_VERSION       4.7.1
+ENV BITBUCKET_VERSION       4.13.0
 ENV BITBUCKET_HOME          "/var/atlassian/application-data/bitbucket"
 ENV BITBUCKET_INSTALL_DIR   "/opt/atlassian/bitbucket"
 ENV DOWNLOAD_URL            "https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-"
@@ -66,7 +67,7 @@ RUN set -e \
 # home directory needs to be persisted as well as parts of the installation
 # directory (accessing logs). These directories will be set-and-used during
 # data-only container volume bound run-mode.
-# VOLUME ["${BITBUCKET_INSTALL_DIR}", "${BITBUCKET_HOME}"]
+VOLUME ["${BITBUCKET_INSTALL_DIR}", "${BITBUCKET_HOME}"]
 
 # Set application base communication port(s), bitbucket HTTP and bitbucket SSH
 EXPOSE 7990 7999
