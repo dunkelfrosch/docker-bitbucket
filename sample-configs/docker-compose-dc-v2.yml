@@ -13,7 +13,7 @@ version: '2'
 services:
   bitbucket:
     restart: 'always'
-    # image: dunkelfrosch/bitbucket:4.2.0
+    # image: dunkelfrosch/bitbucket
     build:
       context: .
 
@@ -38,7 +38,7 @@ services:
   #
   bitbucket_data:
     restart: 'no'
-    # image: dunkelfrosch/bitbucket:4.2.0
+    # image: dunkelfrosch/bitbucket
     build:
       context: .
 
