@@ -3,7 +3,7 @@
 # OS/CORE  : java:8
 # SERVICES : -
 #
-# VERSION 1.0.0
+# VERSION 1.0.2
 #
 
 FROM java:8
@@ -11,32 +11,29 @@ FROM java:8
 MAINTAINER Patrick Paechnatz <patrick.paechnatz@gmail.com>
 LABEL com.container.vendor="dunkelfrosch impersonate" \
       com.container.service="atlassian/bitbucket" \
-      com.container.service.version="4.13.0" \
+      com.container.service.version="5.1.3" \
       com.container.priority="1" \
       com.container.project="bitbucket" \
-      img.version="1.0.0" \
+      img.version="1.0.2" \
       img.description="atlassian bitbucket application container"
 
-# Setup base environment variables
-ENV TERM                    xterm
-ENV LC_ALL                  C.UTF-8
-ENV DEBIAN_FRONTEND         noninteractive
-ENV TIMEZONE                "Europe/Berlin"
-# Setup application install environment variables
-
-ENV BITBUCKET_VERSION       4.13.0
-ENV BITBUCKET_HOME          "/var/atlassian/application-data/bitbucket"
-ENV BITBUCKET_INSTALL_DIR   "/opt/atlassian/bitbucket"
-ENV DOWNLOAD_URL            "https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-"
-ENV JVM_MYSQL_CONNECTOR_URL "http://dev.mysql.com/get/Downloads/Connector-J"
-ENV JVM_MYSQL_CONNETOR      "mysql-connector-java-5.1.36"
-ENV JAVA_HOME               "/usr/lib/jvm/java-1.8.0-openjdk-amd64"
-ENV RUN_USER                daemon
-ENV RUN_GROUP               daemon
+ENV TERM="xterm" \
+    LC_ALL="C.UTF-8" \
+    DEBIAN_FRONTEND="noninteractive" \
+    TIMEZONE="Europe/Berlin" \
+    BITBUCKET_VERSION="5.1.3" \
+    BITBUCKET_HOME="/var/atlassian/application-data/bitbucket" \
+    BITBUCKET_INSTALL_DIR="/opt/atlassian/bitbucket" \
+    DOWNLOAD_URL="https://downloads.atlassian.com/software/stash/downloads/atlassian-bitbucket-" \
+    JVM_MYSQL_CONNECTOR_URL="http://dev.mysql.com/get/Downloads/Connector-J" \
+    JVM_MYSQL_CONNETOR="mysql-connector-java-5.1.36" \
+    JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
+    RUN_USER="daemon" \
+    RUN_GROUP="daemon"
 
 # x-layer 1: package manager related processor
 RUN apt-get update -qq \
-    && apt-get install -qq -y --no-install-recommends git liblucene2-java mc xmlstarlet ntp \
+    && apt-get install -qq -y --no-install-recommends software-properties-common debconf-utils git liblucene2-java mc xmlstarlet ntp \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/cache /var/lib/log /tmp/* /var/tmp/*

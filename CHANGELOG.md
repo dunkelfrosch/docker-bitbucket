@@ -4,8 +4,17 @@ All notable changes of the DockerBitbucket release series are documented in this
 
 _This DockerBitbucket changeLog documentation start with version 0.9.6 (2015-12-26)_
 
-## [1.0.1], 2017-01-21:
+## [1.0.2], 2017-07-08:
 _current_
+
+### Changes
+- upgrade bitbucket server to version 5.1.3
+
+### Added
+- new default system packages for better upgrade behaviour
+
+
+## [1.0.1], 2017-01-21:
 
 ### Changes
 - upgrade bitbucket server to latest version 4.13.0

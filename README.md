@@ -1,10 +1,11 @@
-# Docker Image for Atlassian Bitbucket Server 4.13.0
+# Docker Image for Atlassian Bitbucket Server
 
 this repository provide the currently latest version of Atlassians sourcecode repository/review software [Bitbucket](https://de.atlassian.com/software/bitbucket) including the recommended [MySQL java connector](http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.36.tar.gz) for an easy and painless docker based Bitbucket installation. Take note that this repository will be used inside our docker atlassian application workbench sources, which are also available on [Github](https://github.com/dunkelfrosch/docker-atlassian-wb) as soon as documentation is completed. *In this workbench we've combined several Atlassian products (JIRA, Confluence and Bitbucket) using advanced docker features like docker-compose based service management, data-container and links*
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![System Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](VERSION)
-[![Build Status](https://travis-ci.org/dunkelfrosch/docker-bitbucket.svg?branch=master)](https://travis-ci.org/dunkelfrosch/docker-bitbucket)
+[![System Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](VERSION1)
+[![System Version](https://img.shields.io/badge/bitbucket-5.1.3-blue.svg)](VERSION2)
+[![Build Status](https://api.travis-ci.org/dunkelfrosch/docker-bitbucket.svg?branch=master)](https://travis-ci.org/dunkelfrosch/docker-bitbucket)
 
 
 ## Preparation
@@ -24,7 +25,7 @@ These steps will show you the generic, pure docker-based installation of our Atl
 git clone https://github.com/dunkelfrosch/docker-bitbucket.git .
 ```
 
-2. build Bitbucket (version 4.13.0) image on your local docker host, naming image "dunkelfrosch/bitbucket"
+2. build Bitbucket (version 5.1.3) image on your local docker host, naming image "dunkelfrosch/bitbucket"
 
 ```bash
 docker build -t dunkelfrosch/bitbucket
@@ -92,7 +93,7 @@ docker-compose up -d bitbucket
 4. (*optional*) rename the resulting image after successful build (we'll use our image auto-name result here)
 
 ```bash
-docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:4.13.0
+docker tag dfdockerbitbucket_bitbucket dunkelfrosch/bitbucket:5.1.3
 ```
 
 5. the result should by a running container and an available local bitbucket image
